@@ -9,8 +9,11 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Jasa Pembuatan Website Profesional | terasweb.id",
+  title: "Jasa Pembuatan Website Profesional",
   description: "Jasa Pembuatan Website Profesional yang Modern, Cepat, dan Responsif. Kembangkan bisnis Anda bersama Terasweb.id dari desain hingga deploy agar websitemu selalu optimal.",
+  icons: {
+    icon: "/assets/images/faviconq.jpeg",
+  },
 };
 
 export default function RootLayout({
