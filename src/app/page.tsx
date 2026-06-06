@@ -21,6 +21,33 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Scroll reveal animation using Intersection Observer
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.08, // trigger slightly before it is fully in view
+    };
+
+    const revealCallback = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target); // stop observing once animated
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(revealCallback, observerOptions);
+    const revealElements = document.querySelectorAll(".scroll-reveal");
+    
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      revealElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <>
       {/* Decorative background elements */}
@@ -237,7 +264,7 @@ export default function Home() {
         <section className="why-section" id="tentang">
           <div className="container why-container">
             {/* Left Column: Geometric/Fox Tech Mockup (using crisp SVG illustration) */}
-            <div className="why-image-wrapper">
+            <div className="why-image-wrapper scroll-reveal">
               <div className="why-image-glow"></div>
               <svg width="100%" viewBox="0 0 500 380" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ backgroundColor: "#0f172a", display: "block", width: "100%", height: "auto" }}>
                 <defs>
@@ -274,7 +301,7 @@ export default function Home() {
             </div>
 
             {/* Right Column: Key Value Propositions */}
-            <div className="why-content">
+            <div className="why-content scroll-reveal">
               <span className="section-tag why-tag">Mengapa SebatasWeb?</span>
               <h2 className="section-title">Kami Menghadirkan Kualitas Terbaik</h2>
               <p className="section-subtitle">
@@ -332,7 +359,7 @@ export default function Home() {
         {/* Karya Kami / Portfolio Section */}
         <section className="portfolio-section" id="portofolio">
           <div className="container">
-            <div className="section-header">
+            <div className="section-header scroll-reveal">
               <span className="section-tag">Karya Kami</span>
               <h2 className="section-title">Portofolio Website Terbaru</h2>
               <p className="section-subtitle">
@@ -342,7 +369,7 @@ export default function Home() {
 
             <div className="portfolio-grid">
               {/* Portfolio 1 */}
-              <div className="portfolio-card">
+              <div className="portfolio-card scroll-reveal reveal-delay-1">
                 <div className="portfolio-img-container">
                   <svg width="100%" height="100%" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="400" height="220" fill="#7c2d12" />
@@ -366,7 +393,7 @@ export default function Home() {
               </div>
 
               {/* Portfolio 2 */}
-              <div className="portfolio-card">
+              <div className="portfolio-card scroll-reveal reveal-delay-2">
                 <div className="portfolio-img-container">
                   <svg width="100%" height="100%" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="400" height="220" fill="#0f172a" />
@@ -390,7 +417,7 @@ export default function Home() {
               </div>
 
               {/* Portfolio 3 */}
-              <div className="portfolio-card">
+              <div className="portfolio-card scroll-reveal reveal-delay-3">
                 <div className="portfolio-img-container">
                   <svg width="100%" height="100%" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="400" height="220" fill="#9a3412" />
@@ -419,7 +446,7 @@ export default function Home() {
         {/* Harga / Pricing Section */}
         <section className="services-section" id="harga">
           <div className="container">
-            <div className="section-header">
+            <div className="section-header scroll-reveal">
               <span className="section-tag">Daftar Harga</span>
               <h2 className="section-title">Pilihan Paket Harga Website</h2>
               <p className="section-subtitle">
@@ -429,7 +456,7 @@ export default function Home() {
 
             <div className="services-grid">
               {/* Card 1: Landing Page */}
-              <div className="service-card">
+              <div className="service-card scroll-reveal reveal-delay-1">
                 <span className="pricing-badge">Paket Dasar</span>
                 <h3 className="service-title" style={{ marginTop: '8px' }}>Landing Page</h3>
                 <div className="pricing-price">
@@ -463,7 +490,7 @@ export default function Home() {
               </div>
 
               {/* Card 2: Company Profile */}
-              <div className="service-card">
+              <div className="service-card scroll-reveal reveal-delay-2">
                 <span className="pricing-badge">Populer</span>
                 <h3 className="service-title" style={{ marginTop: '8px' }}>Company Profile</h3>
                 <div className="pricing-price">
@@ -497,7 +524,7 @@ export default function Home() {
               </div>
 
               {/* Card 3: Toko Online */}
-              <div className="service-card">
+              <div className="service-card scroll-reveal reveal-delay-3">
                 <span className="pricing-badge">Bisnis</span>
                 <h3 className="service-title" style={{ marginTop: '8px' }}>Toko Online</h3>
                 <div className="pricing-price">
@@ -531,7 +558,7 @@ export default function Home() {
               </div>
 
               {/* Card 4: Custom Website */}
-              <div className="service-card">
+              <div className="service-card scroll-reveal reveal-delay-4">
                 <span className="pricing-badge">Eksklusif</span>
                 <h3 className="service-title" style={{ marginTop: '8px' }}>Custom Website</h3>
                 <div className="pricing-price">
@@ -570,7 +597,7 @@ export default function Home() {
         {/* CTA (Call to Action) Section */}
         <section className="cta-section" id="kontak">
           <div className="container">
-            <div className="cta-container">
+            <div className="cta-container scroll-reveal">
               <div className="cta-content">
                 <h2 className="cta-title">Siap Mengembangkan Bisnis Digital Anda?</h2>
                 <p className="cta-desc">
@@ -717,6 +744,9 @@ export default function Home() {
             onClick={(e) => {
               e.stopPropagation();
               setIsPromoVisible(false);
+              setTimeout(() => {
+                setIsPromoVisible(true);
+              }, 60000);
             }}
             aria-label="Tutup promo"
           >
