@@ -42,6 +42,7 @@ model Package {
 model Portfolio {
   id          String   @id @default(cuid())
   title       String
+  category    String
   description String
   imageUrl    String
   createdAt   DateTime @default(now())

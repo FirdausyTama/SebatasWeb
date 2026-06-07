@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { logoutAction } from "@/app/(admin)/admin/login/actions";
 
-export default function AdminSidebar() {
+export default function AdminSidebar({ closeSidebar }: { closeSidebar?: () => void }) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -16,9 +16,19 @@ export default function AdminSidebar() {
 
   return (
     <aside className="admin-sidebar">
-      <div className="admin-sidebar-logo">
-        Sebatas<span style={{ color: "var(--dark)" }}>Web</span>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 24px', marginBottom: '32px' }}>
+        <div className="admin-sidebar-logo">
+          Sebatas<span style={{ color: "var(--dark)" }}>Web</span>
+        </div>
+        {/* Mobile close button */}
+        <button onClick={closeSidebar} className="admin-close-btn" aria-label="Close Sidebar">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
+
       <nav className="admin-nav">
         <Link 
           href="/admin/dashboard" 
