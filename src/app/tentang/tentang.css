@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Keunggulan / Why Us Section
+   ========================================================================== */
+.why-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.why-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.why-image-wrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.why-image-glow {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.1) 0%, rgba(249, 115, 22, 0) 70%);
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    pointer-events: none;
+}
+
+.why-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.why-tag {
+    align-self: flex-start;
+}
+
+.why-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.why-feature-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.why-feature-icon {
+    width: 44px;
+    height: 44px;
+    background-color: var(--secondary-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+    flex-shrink: 0;
+}
+
+.why-feature-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+.why-feature-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* Responsive / Media Queries for Why Us */
+@media (max-width: 1024px) {
+    .why-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .why-image-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-image-wrapper {
+        max-width: 100%;
+    }
+}

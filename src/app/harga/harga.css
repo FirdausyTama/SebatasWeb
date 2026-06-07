@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Layanan / Services Section
+   ========================================================================== */
+.services-section {
+    padding: 100px 0;
+    background-color: var(--light-gray);
+    position: relative;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.service-card {
+    background-color: var(--white);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    padding: 40px 32px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background-color: var(--primary);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(234, 88, 12, 0.05), 0 10px 10px -5px rgba(234, 88, 12, 0.02);
+    border-color: rgba(234, 88, 12, 0.2);
+}
+
+.service-card:hover::before {
+    height: 100%;
+}
+
+/* ==========================================================================
+   Pricing Custom Helper Classes
+   ========================================================================== */
+.pricing-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary);
+    background-color: var(--primary-light);
+    padding: 6px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.pricing-price {
+    margin: 16px 0 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.pricing-amount {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.pricing-period {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.pricing-features {
+    list-style: none;
+    width: 100%;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.pricing-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--dark-muted);
+}
+
+.pricing-feature-item svg {
+    flex-shrink: 0;
+    color: var(--primary);
+}
+
+.service-icon-box {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-light);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    margin-bottom: 24px;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-icon-box {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.service-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--dark);
+}
+
+.service-description {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex: 1;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.service-link svg {
+    transition: transform 0.25s ease;
+}
+
+.service-link:hover {
+    color: var(--primary-hover);
+}
+
+.service-link:hover svg {
+    transform: translateX(4px);
+}

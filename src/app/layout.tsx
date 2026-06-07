@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import FloatingPromo from "@/components/FloatingPromo";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -10,7 +13,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Jasa Pembuatan Website Profesional",
-  description: "Jasa Pembuatan Website Profesional yang Modern, Cepat, dan Responsif. Kembangkan bisnis Anda bersama Terasweb.id dari desain hingga deploy agar websitemu selalu optimal.",
+  description: "",
   icons: {
     icon: "/assets/images/faviconq.jpeg",
   },
@@ -24,7 +27,17 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className={outfit.className}>
+        {/* Decorative background elements */}
+        <div className="bg-stripes">
+          <div className="stripe stripe-1"></div>
+          <div className="stripe stripe-2"></div>
+          <div className="stripe stripe-3"></div>
+        </div>
+
+        <Header />
         {children}
+        <Footer />
+        <FloatingPromo />
       </body>
     </html>
   );
