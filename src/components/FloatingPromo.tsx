@@ -24,12 +24,9 @@ export default function FloatingPromo() {
         &times;
       </button>
       <Link href="/harga" className="promo-link">
-        <video
-          src="/assets/images/iklan-promo.webm"
-          autoPlay
-          loop
-          muted
-          playsInline
+        <img
+          src="/assets/images/iklan-promo.gif"
+          alt="Promo Spesial"
           className="promo-img"
           style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }}
         />

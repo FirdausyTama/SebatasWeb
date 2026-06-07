@@ -17,7 +17,7 @@
     --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
     --shadow-lg: 0 12px 20px -3px rgba(234, 88, 12, 0.08), 0 4px 6px -2px rgba(234, 88, 12, 0.03);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --container-width: 1200px;
+    --container-width: 1280px;
 }
 
 * {
@@ -94,7 +94,7 @@ body {
     width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px;
 }
 
 /* Section Headings */
@@ -621,6 +621,22 @@ body {
     filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.18));
 }
 
+@media (max-width: 768px) {
+    .promo-floating-banner {
+        max-width: 140px;
+        bottom: 30px;
+        right: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-floating-banner {
+        max-width: 130px;
+        bottom: 20px;
+        right: 12px;
+    }
+}
+
 .promo-floating-banner:hover {
     transform: translateY(-6px) scale(1.03);
     filter: drop-shadow(0 16px 30px rgba(234, 88, 12, 0.25));
@@ -663,6 +679,7 @@ body {
     height: auto;
     display: block;
     object-fit: cover;
+    mix-blend-mode: screen;
 }
 
 @keyframes slideUp {

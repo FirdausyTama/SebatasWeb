@@ -2,8 +2,8 @@
    Hero Section
    ========================================================================== */
 .hero-section {
-    padding-top: 160px;
-    padding-bottom: 100px;
+    padding-top: 120px;
+    padding-bottom: 80px;
     display: flex;
     align-items: center;
     position: relative;
@@ -67,7 +67,7 @@
 
 .hero-image {
     width: 100%;
-    max-width: 680px;
+    max-width: 520px;
     height: auto;
     object-fit: contain;
     z-index: 1;
