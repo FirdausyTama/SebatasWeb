@@ -7,6 +7,13 @@ export default function KontakSection() {
     <section className="cta-section" id="kontak">
       <div className="container">
         <div className="cta-container scroll-reveal">
+          <div className="cta-mascot">
+            <img 
+              src="/assets/images/foxmikir.png" 
+              alt="Mascot SebatasWeb" 
+              className="cta-mascot-img"
+            />
+          </div>
           <div className="cta-text">
             <h2 className="cta-title">Siap Mengembangkan Bisnis Digital Anda?</h2>
             <p className="cta-desc">

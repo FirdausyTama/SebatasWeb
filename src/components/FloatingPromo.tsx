@@ -1,10 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function FloatingPromo() {
-  const [isPromoVisible, setIsPromoVisible] = useState(true);
+  const [isPromoVisible, setIsPromoVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPromoVisible(true);
+    }, 5000); // Muncul setelah 20 detik
+
+    return () => clearTimeout(timer);
+  }, []);
 
   if (!isPromoVisible) return null;
 

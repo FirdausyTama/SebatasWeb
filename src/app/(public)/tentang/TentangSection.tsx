@@ -5,168 +5,115 @@ import "./tentang.css";
 export default function TentangSection() {
   return (
     <section className="why-section" id="tentang">
-      <div className="container why-container">
-        {/* Left Column: Geometric Tech Mockup */}
-        <div className="why-image-wrapper scroll-reveal">
-          <div className="why-image-glow"></div>
-          <svg
-            width="100%"
-            viewBox="0 0 500 380"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{
-              backgroundColor: "#0f172a",
-              display: "block",
-              width: "100%",
-              height: "auto",
-            }}
-          >
-            <defs>
-              <linearGradient id="why-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#ea580c" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#f97316" stopOpacity="0.2" />
-              </linearGradient>
-              <linearGradient id="why-grad2" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#f97316" stopOpacity="0.7" />
-                <stop offset="100%" stopColor="#ea580c" stopOpacity="0.1" />
-              </linearGradient>
-            </defs>
-            {/* Tech Dashboard Wireframe Preview */}
-            <rect
-              x="30"
-              y="30"
-              width="440"
-              height="320"
-              rx="12"
-              fill="#1e293b"
-              stroke="#334155"
-              strokeWidth="2"
-            />
-            <rect x="30" y="30" width="440" height="40" rx="12" fill="#0f172a" />
-            <circle cx="55" cy="50" r="5" fill="#ef4444" />
-            <circle cx="70" cy="50" r="5" fill="#f59e0b" />
-            <circle cx="85" cy="50" r="5" fill="#10b981" />
-
-            {/* Dashboard layout shapes */}
-            <rect x="50" y="90" width="120" height="220" rx="8" fill="url(#why-grad1)" />
-            <rect
-              x="190"
-              y="90"
-              width="260"
-              height="90"
-              rx="8"
-              fill="#1e293b"
-              stroke="url(#why-grad2)"
-              strokeWidth="1.5"
-            />
-            <rect x="190" y="200" width="120" height="110" rx="8" fill="#1e293b" stroke="#334155" />
-            <rect x="330" y="200" width="120" height="110" rx="8" fill="#1e293b" stroke="#334155" />
-
-            {/* Simulated line charts */}
-            <path
-              d="M205 150 Q 240 120 270 145 T 350 110 T 430 135"
-              fill="none"
-              stroke="#f97316"
-              strokeWidth="3"
-              strokeLinecap="round"
-            />
-            <path
-              d="M205 160 Q 240 135 270 155 T 350 130 T 430 145"
-              fill="none"
-              stroke="#ea580c"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-
-            {/* Glowing neon dots */}
-            <circle cx="350" cy="110" r="4" fill="#ffffff" />
-            <circle cx="430" cy="135" r="4" fill="#ffffff" />
-          </svg>
+      <div className="container">
+        <div className="why-header scroll-reveal">
+          <span className="section-tag why-tag">Mengapa SebatasWeb?</span>
+          <h2 className="section-title">Bukan Sekadar Bikin Website, Kami Bangun Bisnis Anda</h2>
+          <p className="section-subtitle">
+            Jangan biarkan pelanggan kabur karena website lambat atau kaku. Kami bangun website super cepat, aman, dan siap tingkatkan omzet bisnis Anda.
+          </p>
         </div>
 
-        {/* Right Column: Key Value Propositions */}
-        <div className="why-content scroll-reveal">
-          <span className="section-tag why-tag">Mengapa SebatasWeb?</span>
-          <h2 className="section-title">Kami Menghadirkan Kualitas Terbaik</h2>
-          <p className="section-subtitle">
-            Kami memahami bahwa website adalah wajah digital bisnis Anda. Oleh karena itu, kami tidak pernah berkompromi terhadap kualitas produk yang dihasilkan.
-          </p>
-
-          <div className="why-features">
-            {/* Feature 1 */}
-            <div className="why-feature-item">
-              <div className="why-feature-icon">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="why-feature-title">Kecepatan & Performa Tinggi</h4>
-                <p className="why-feature-desc">
-                  Website dioptimalkan sepenuhnya agar memuat dalam hitungan milidetik, meningkatkan kenyamanan pengunjung serta skor SEO Google.
-                </p>
-              </div>
+        <div className="why-features scroll-reveal">
+          {/* Feature 1 */}
+          <div className="why-feature-item">
+            <div className="why-feature-icon">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+              </svg>
             </div>
-
-            {/* Feature 2 */}
-            <div className="why-feature-item">
-              <div className="why-feature-icon">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="why-feature-title">Keamanan & Kode Bersih</h4>
-                <p className="why-feature-desc">
-                  Ditulis dengan kode standar modern bebas celah keamanan untuk meminimalkan risiko serangan siber pada platform bisnis Anda.
-                </p>
-              </div>
+            <div>
+              <h4 className="why-feature-title">Wusss! Loading Super Cepat</h4>
+              <p className="why-feature-desc">
+                Website ngebut tanpa loading lama. Pengunjung betah, dan website Anda lebih mudah masuk halaman pertama Google.
+              </p>
             </div>
+          </div>
 
-            {/* Feature 3 */}
-            <div className="why-feature-item">
-              <div className="why-feature-icon">
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="why-feature-title">Dukungan Penuh & Konsultasi</h4>
-                <p className="why-feature-desc">
-                  Kami menemani proses bisnis Anda mulai dari diskusi konsep, perancangan desain UI/UX, proses *coding*, hingga website siap digunakan.
-                </p>
-              </div>
+          {/* Feature 2 */}
+          <div className="why-feature-item">
+            <div className="why-feature-icon">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h4 className="why-feature-title">Anti-Hack & Aman Banget</h4>
+              <p className="why-feature-desc">
+                Standar keamanan tertinggi untuk melindungi data pelanggan dan bisnis Anda dari berbagai serangan siber.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 3 */}
+          <div className="why-feature-item">
+            <div className="why-feature-icon">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 className="why-feature-title">Terima Beres, Kami Temani Terus</h4>
+              <p className="why-feature-desc">
+                Bebas pusing teknis. Mulai dari desain UI/UX hingga website online, serahkan semuanya kepada tim ahli kami.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 4 */}
+          <div className="why-feature-item">
+            <div className="why-feature-icon">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="8" r="6"/>
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+              </svg>
+            </div>
+            <div>
+              <h4 className="why-feature-title">Developer Tersertifikasi Resmi</h4>
+              <p className="why-feature-desc">
+                Ditangani langsung oleh web developer bersertifikasi nasional dan internasional. Kualitas project Anda terjamin maksimal.
+              </p>
             </div>
           </div>
         </div>

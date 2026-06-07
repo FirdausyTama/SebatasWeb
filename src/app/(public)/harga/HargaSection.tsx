@@ -147,8 +147,6 @@ export default function HargaSection() {
             <span className="pricing-badge">Eksklusif</span>
             <h3 className="service-title" style={{ marginTop: "8px" }}>Custom Website</h3>
             <div className="pricing-header">
-              <span className="pricing-start-from">Mulai dari</span>
-              <span className="pricing-original-price">Rp 0</span>
               <div className="pricing-price">
                 <span className="pricing-amount">Harga Khusus</span>
               </div>
@@ -180,7 +178,7 @@ export default function HargaSection() {
               </li>
               <li className="pricing-feature-item">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                <span>Domain (.com) & Hosting Unlimited 1 Tahun</span>
+                <span>Domain (.com/.id) & Hosting Unlimited 1 Tahun</span>
               </li>
             </ul>
             <a href="https://wa.me/6282150224691?text=Halo%20SebatasWeb,%20saya%20tertarik%20dengan%20Paket%20Custom%20Website" className="btn btn-primary" style={{ width: "100%", marginTop: "auto" }} target="_blank" rel="noopener noreferrer">
