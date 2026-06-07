@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Order {
+  id        String   @id @default(cuid())
+  orderId   String   @unique // e.g. SW-001
+  client    String
+  contact   String
+  package   String
+  status    String   @default("Proses") // Proses, Diskusi, Selesai, Batal
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Package {
+  id          String   @id @default(cuid())
+  name        String
+  oldPrice    String?
+  newPrice    String
+  features    String   // Comma separated
+  isHighlight Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Portfolio {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  imageUrl    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Content {
+  id        String   @id @default(cuid())
+  section   String   @unique // e.g. "hero", "about", "cta"
+  data      String   // JSON string containing all text fields for this section
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

@@ -14,6 +14,7 @@
     width: 100%;
     min-height: 100vh;
     padding: 20px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); /* Vibrant Orange Gradient */
 }
 
 .admin-login-card {

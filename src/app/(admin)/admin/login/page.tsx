@@ -3,30 +3,58 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { loginAction } from "./actions";
 
 export default function AdminLogin() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isPending, setIsPending] = useState(false);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Simulasi login sukses, langsung diarahkan ke dashboard
-    router.push("/admin/dashboard");
+    setIsPending(true);
+    setError(null);
+    
+    const formData = new FormData(e.currentTarget);
+    const result = await loginAction(formData);
+    
+    if (result?.error) {
+      setError(result.error);
+      setIsPending(false);
+    } else if (result?.success) {
+      router.push("/admin/dashboard");
+    }
   };
 
   return (
     <div className="admin-login-container">
       <div className="admin-login-card">
-        <div className="admin-login-logo">
-          Sebatas<span style={{ color: "var(--dark)" }}>Web</span>
+        <div className="admin-login-logo" style={{ marginBottom: "24px" }}>
+          <Image 
+            src="/assets/images/faviconq.jpeg" 
+            alt="SebatasWeb Logo" 
+            width={80} 
+            height={80} 
+            style={{ borderRadius: "50%", margin: "0 auto", display: "block", boxShadow: "0 4px 10px rgba(0,0,0,0.1)" }} 
+          />
         </div>
-        <form onSubmit={handleLogin}>
+        
+        {error && (
+          <div style={{ backgroundColor: "#fee2e2", color: "#ef4444", padding: "10px 14px", borderRadius: "8px", marginBottom: "20px", fontSize: "0.9rem", fontWeight: "600" }}>
+            {error}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit}>
           <div className="admin-form-group">
             <label htmlFor="email">Email</label>
             <input 
               type="email" 
-              id="email" 
-              placeholder="admin@sebatasweb.com" 
+              id="email"
+              name="email"
+              placeholder="example@gmail.com" 
               required 
             />
           </div>
@@ -36,7 +64,8 @@ export default function AdminLogin() {
               <input 
                 type={showPassword ? "text" : "password"} 
                 id="password" 
-                placeholder="••••••••" 
+                name="password"
+                placeholder="password" 
                 required 
                 style={{ paddingRight: "40px" }}
               />
@@ -71,8 +100,8 @@ export default function AdminLogin() {
               </button>
             </div>
           </div>
-          <button type="submit" className="btn-admin">
-            Masuk
+          <button type="submit" className="btn-admin" disabled={isPending}>
+            {isPending ? "Memproses..." : "Masuk"}
           </button>
 
           <div style={{ 
@@ -83,7 +112,7 @@ export default function AdminLogin() {
             fontSize: "0.9rem"
           }}>
             <label style={{ display: "flex", alignItems: "center", gap: "8px", cursor: "pointer", color: "var(--dark-muted)", fontWeight: "500" }}>
-              <input type="checkbox" style={{ width: "16px", height: "16px", cursor: "pointer", margin: 0 }} /> Ingat saya
+              <input type="checkbox" name="remember" style={{ width: "16px", height: "16px", cursor: "pointer", margin: 0 }} /> Ingat saya
             </label>
             <Link href="/" style={{ color: "var(--primary)", textDecoration: "none", fontWeight: "600" }}>
               ← Kembali ke Beranda

@@ -1,10 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { logoutAction } from "@/app/(admin)/admin/login/actions";
 
 export default function AdminSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogout = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    await logoutAction();
+    router.push("/admin/login");
+  };
 
   return (
     <aside className="admin-sidebar">
@@ -45,14 +53,14 @@ export default function AdminSidebar() {
       </nav>
       
       <div style={{ marginTop: "auto", padding: "0 16px" }}>
-        <Link href="/admin/login" className="admin-logout-btn">
+        <a href="#" onClick={handleLogout} className="admin-logout-btn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '8px' }}>
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
             <polyline points="16 17 21 12 16 7"></polyline>
             <line x1="21" y1="12" x2="9" y2="12"></line>
           </svg>
           Logout
-        </Link>
+        </a>
       </div>
     </aside>
   );
