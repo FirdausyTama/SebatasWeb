@@ -8,6 +8,10 @@
     overflow-x: hidden;
 }
 
+.admin-body-wrapper {
+    width: 100%;
+}
+
 .admin-login-container {
     display: flex;
     justify-content: center;
@@ -164,7 +168,7 @@
     cursor: pointer;
     padding: 8px;
     border-radius: 8px;
-    display: flex;
+    display: none; /* Sembunyikan tombol di desktop */
     align-items: center;
     justify-content: center;
 }
@@ -190,6 +194,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s;
+    display: none; /* Sembunyikan di desktop */
 }
 
 .sidebar-overlay.show {
@@ -214,6 +219,14 @@
     
     .admin-close-btn {
         display: block;
+    }
+    
+    .admin-menu-btn {
+        display: flex; /* Kembalikan tombol menu di layar kecil */
+    }
+    
+    .sidebar-overlay {
+        display: block; /* Munculkan overlay hanya di layar kecil */
     }
 }
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import "./kontak.css";
 
 export default function KontakSection() {
@@ -8,10 +9,13 @@ export default function KontakSection() {
       <div className="container">
         <div className="cta-container scroll-reveal">
           <div className="cta-mascot">
-            <img 
+            <Image 
               src="/assets/images/foxmikir.png" 
               alt="Mascot SebatasWeb" 
+              width={250}
+              height={250}
               className="cta-mascot-img"
+              loading="lazy"
             />
           </div>
           <div className="cta-text">

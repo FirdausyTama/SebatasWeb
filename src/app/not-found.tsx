@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
   title: "404 - Halaman Tidak Ditemukan | SebatasWeb",
@@ -22,16 +23,18 @@ export default function NotFound() {
         position: "relative",
         animation: "float 6s ease-in-out infinite"
       }}>
-        <img 
+        <Image 
           src="/assets/images/foxsedih.png" 
           alt="Rubah Sedih - Halaman Tidak Ditemukan" 
+          width={280}
+          height={280}
           style={{
-            width: "280px",
             maxWidth: "100%",
             height: "auto",
             marginBottom: "10px",
             filter: "drop-shadow(0 15px 25px rgba(234, 88, 12, 0.2))"
           }}
+          loading="lazy"
         />
       </div>
       

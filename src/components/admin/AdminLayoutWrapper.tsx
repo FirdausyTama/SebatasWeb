@@ -24,7 +24,11 @@ export default function AdminLayoutWrapper({ children }: { children: React.React
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const toggleSidebar = () => {
+    if (window.innerWidth <= 1024) {
+      setIsSidebarOpen(!isSidebarOpen);
+    }
+  };
   const closeSidebar = () => {
     if (window.innerWidth <= 1024) {
       setIsSidebarOpen(false);

@@ -1,19 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+    --color-rns-blue: #1e3a8a;
+    --color-rns-light: #3b82f6;
+    --color-rns-gray: #EEEEEE;
+    --color-rns-text: #706f6c;
+}
+
 /* ==========================================================================
    Base Styles & Variables (Redesigned: Orange & Teal)
    ========================================================================== */
 :root {
-    --primary: #ea580c;          /* Orange/Fox 600 */
-    --primary-hover: #c2410c;    /* Orange/Fox 700 */
+    --primary: #ea580c;
+    /* Orange/Fox 600 */
+    --primary-hover: #c2410c;
+    /* Orange/Fox 700 */
     --primary-light: rgba(234, 88, 12, 0.08);
-    --secondary: #f97316;        /* Orange/Fox 500 */
-    --secondary-hover: #ea580c;  /* Orange/Fox 600 */
+    --secondary: #f97316;
+    /* Orange/Fox 500 */
+    --secondary-hover: #ea580c;
+    /* Orange/Fox 600 */
     --secondary-light: rgba(249, 115, 22, 0.08);
-    --dark: #0f172a;             /* Slate 900 */
-    --dark-muted: #334155;       /* Slate 700 */
-    --light-gray: #f8fafc;       /* Slate 50 */
-    --text-muted: #64748b;       /* Slate 500 */
+    --dark: #0f172a;
+    /* Slate 900 */
+    --dark-muted: #334155;
+    /* Slate 700 */
+    --light-gray: #f8fafc;
+    /* Slate 50 */
+    --text-muted: #64748b;
+    /* Slate 500 */
     --white: #ffffff;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
     --shadow-lg: 0 12px 20px -3px rgba(234, 88, 12, 0.08), 0 4px 6px -2px rgba(234, 88, 12, 0.03);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -337,8 +354,13 @@ body {
     transition: var(--transition);
 }
 
-.hamburger::before { top: -6px; }
-.hamburger::after { bottom: -6px; }
+.hamburger::before {
+    top: -6px;
+}
+
+.hamburger::after {
+    bottom: -6px;
+}
 
 /* ==========================================================================
    Footer Section
@@ -483,11 +505,11 @@ body {
         grid-template-columns: 1fr 1fr;
         gap: 32px;
     }
-    
-    .footer-grid > div:first-child {
+
+    .footer-grid>div:first-child {
         grid-column: span 2;
     }
-    
+
     .section-title {
         font-size: 2.2rem;
     }
@@ -591,7 +613,7 @@ body {
         grid-template-columns: 1fr 1fr;
         gap: 24px;
     }
-    
+
     .section-title {
         font-size: 1.75rem;
     }
@@ -687,6 +709,7 @@ body {
         transform: translateY(100px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -698,6 +721,7 @@ body {
         transform: translateX(125%);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -717,10 +741,21 @@ body {
     transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+    transition-delay: 0.4s;
+}
 
 /* Utility class for primary colored text */
 .text-primary {

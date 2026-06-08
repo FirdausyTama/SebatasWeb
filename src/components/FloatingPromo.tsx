@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FloatingPromo() {
   const [isPromoVisible, setIsPromoVisible] = useState(false);
@@ -9,7 +10,7 @@ export default function FloatingPromo() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsPromoVisible(true);
-    }, 5000); // Muncul setelah 20 detik
+    }, 5000); // Muncul setelah 5 detik
 
     return () => clearTimeout(timer);
   }, []);
@@ -32,11 +33,14 @@ export default function FloatingPromo() {
         &times;
       </button>
       <Link href="/harga" className="promo-link">
-        <img
+        <Image
           src="/assets/images/iklan-promo.gif"
           alt="Promo Spesial"
+          width={200}
+          height={200}
           className="promo-img"
           style={{ width: "100%", height: "auto", display: "block", borderRadius: "12px" }}
+          unoptimized={true} // For GIFs it is often best to leave unoptimized
         />
       </Link>
     </div>
