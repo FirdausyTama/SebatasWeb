@@ -10,7 +10,19 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "Jasa Pembuatan Website Profesional",
-  description: "",
+  description: "Jasa Pembuatan Website Profesional dan Terpercaya",
+  openGraph: {
+    title: "Jasa Pembuatan Website Profesional",
+    description: "Jasa Pembuatan Website Profesional dan Terpercaya",
+    images: ["/assets/images/og-image.png"],
+    siteName: "SebatasWeb",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jasa Pembuatan Website Profesional",
+    description: "Jasa Pembuatan Website Profesional dan Terpercaya",
+    images: ["/assets/images/og-image.png"],
+  },
   icons: {
     icon: "/assets/images/faviconq.jpeg",
   },
