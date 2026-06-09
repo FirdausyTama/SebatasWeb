@@ -9,6 +9,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sebatasweb.com"), // Pastikan ini domain asli Anda
   title: "Jasa Pembuatan Website Profesional",
   description: "Jasa Pembuatan Website Profesional dan Terpercaya",
   openGraph: {
