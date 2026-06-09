@@ -26,7 +26,7 @@ export default function Footer() {
                 <a href="#" target="_blank" rel="noopener noreferrer" className="footer-link">TikTok</a>
               </li>
               <li className="footer-link-item">
-                <a href="#" target="_blank" rel="noopener noreferrer" className="footer-link">Threads</a>
+                <a href="https://www.threads.com/sebatasweb" target="_blank" rel="noopener noreferrer" className="footer-link">Threads</a>
               </li>
             </ul>
           </div>
@@ -58,7 +58,7 @@ export default function Footer() {
                     <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
                     <circle cx="12" cy="10" r="3" />
                   </svg>
-                  <span>Yogyakarta, ID</span>
+                  <span>Daerah Istimewa Yogyakarta, ID</span>
                 </span>
               </div>
             </div>

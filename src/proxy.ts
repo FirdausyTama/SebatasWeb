@@ -20,7 +20,7 @@ export async function proxy(request: NextRequest) {
     
     // If trying to access login page but already logged in -> redirect to dashboard
     if (isLoginPage && payload) {
-      return NextResponse.redirect(new URL('/admin/dashboard', request.url));
+      return NextResponse.redirect(new URL('/admin/pesanan', request.url));
     }
   }
   

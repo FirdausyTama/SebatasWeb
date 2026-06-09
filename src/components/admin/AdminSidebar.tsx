@@ -30,12 +30,7 @@ export default function AdminSidebar({ closeSidebar }: { closeSidebar?: () => vo
       </div>
 
       <nav className="admin-nav">
-        <Link 
-          href="/admin/dashboard" 
-          className={`admin-nav-item ${pathname === "/admin/dashboard" ? "active" : ""}`}
-        >
-          Dashboard
-        </Link>
+
         <Link 
           href="/admin/pesanan" 
           className={`admin-nav-item ${pathname === "/admin/pesanan" ? "active" : ""}`}

@@ -24,7 +24,7 @@ export default function AdminLogin() {
       setError(result.error);
       setIsPending(false);
     } else if (result?.success) {
-      router.push("/admin/dashboard");
+      router.push("/admin/pesanan");
     }
   };
 

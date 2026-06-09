@@ -55,14 +55,15 @@ export default function TentangSection() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="m9 12 2 2 4-4"/>
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
               </svg>
             </div>
             <div>
-              <h4 className="why-feature-title">Anti-Hack & Aman Banget</h4>
+              <h4 className="why-feature-title">Desain Eksklusif & Responsif</h4>
               <p className="why-feature-desc">
-                Standar keamanan tertinggi untuk melindungi data pelanggan dan bisnis Anda dari berbagai serangan siber.
+                Tampilan website dirancang khusus menonjolkan identitas brand Anda, dan dijamin tampil sempurna di layar HP maupun laptop.
               </p>
             </div>
           </div>

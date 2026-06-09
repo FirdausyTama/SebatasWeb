@@ -1,6 +1,7 @@
 /* Base styles for admin */
 .admin-body {
-    background-color: #f1f5f9; /* Slate 100 */
+    background-color: #f1f5f9;
+    /* Slate 100 */
     min-height: 100vh;
     width: 100%;
     display: flex;
@@ -19,7 +20,8 @@
     width: 100%;
     min-height: 100vh;
     padding: 20px;
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); /* Vibrant Orange Gradient */
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    /* Vibrant Orange Gradient */
 }
 
 .admin-login-card {
@@ -28,7 +30,7 @@
     max-width: 400px;
     padding: 40px 30px;
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
 .admin-login-logo {
@@ -122,7 +124,8 @@
     transition: all 0.2s ease;
 }
 
-.admin-nav-item:hover, .admin-nav-item.active {
+.admin-nav-item:hover,
+.admin-nav-item.active {
     background-color: var(--primary-light);
     color: var(--primary);
 }
@@ -132,14 +135,16 @@
     align-items: center;
     padding: 12px 16px;
     border-radius: 8px;
-    color: #ef4444; /* Red color for logout */
+    color: #ef4444;
+    /* Red color for logout */
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s ease;
 }
 
 .admin-logout-btn:hover {
-    background-color: #fee2e2; /* Light red background */
+    background-color: #fee2e2;
+    /* Light red background */
 }
 
 .admin-main {
@@ -168,7 +173,8 @@
     cursor: pointer;
     padding: 8px;
     border-radius: 8px;
-    display: none; /* Sembunyikan tombol di desktop */
+    display: none;
+    /* Sembunyikan tombol di desktop */
     align-items: center;
     justify-content: center;
 }
@@ -189,12 +195,13 @@
 .sidebar-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 40;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s;
-    display: none; /* Sembunyikan di desktop */
+    display: none;
+    /* Sembunyikan di desktop */
 }
 
 .sidebar-overlay.show {
@@ -208,25 +215,27 @@
         margin-left: 0;
         width: 100%;
     }
-    
+
     .sidebar-closed .admin-sidebar {
         transform: translateX(-100%);
     }
-    
+
     .sidebar-open .admin-sidebar {
         transform: translateX(0);
     }
-    
+
     .admin-close-btn {
         display: block;
     }
-    
+
     .admin-menu-btn {
-        display: flex; /* Kembalikan tombol menu di layar kecil */
+        display: flex;
+        /* Kembalikan tombol menu di layar kecil */
     }
-    
+
     .sidebar-overlay {
-        display: block; /* Munculkan overlay hanya di layar kecil */
+        display: block;
+        /* Munculkan overlay hanya di layar kecil */
     }
 }
 
@@ -282,7 +291,7 @@
     background: white;
     padding: 24px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     border: 1px solid #e2e8f0;
 }
 
@@ -302,7 +311,7 @@
 .admin-table-container {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     border: 1px solid #e2e8f0;
     overflow: hidden;
     overflow-x: auto;
@@ -320,7 +329,8 @@
     border-collapse: collapse;
 }
 
-.admin-table th, .admin-table td {
+.admin-table th,
+.admin-table td {
     padding: 16px 24px;
     text-align: left;
     border-bottom: 1px solid #e2e8f0;
@@ -341,16 +351,27 @@
     font-weight: 700;
 }
 
-.badge-success { background-color: #dcfce7; color: #166534; }
-.badge-warning { background-color: #fef9c3; color: #854d0e; }
-.badge-primary { background-color: var(--primary-light); color: var(--primary); }
+.badge-success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.badge-warning {
+    background-color: #fef9c3;
+    color: #854d0e;
+}
+
+.badge-primary {
+    background-color: var(--primary-light);
+    color: var(--primary);
+}
 
 /* New CMS UI Styles */
 .admin-card {
     background: white;
     padding: 24px;
     border-radius: 16px;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     border: 1px solid #e2e8f0;
     margin-bottom: 24px;
 }
@@ -421,8 +442,15 @@
     background-color: #e2e8f0;
 }
 
-.admin-btn-action.success { background-color: #dcfce7; color: #166534; }
-.admin-btn-action.warning { background-color: #fef9c3; color: #854d0e; }
+.admin-btn-action.success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.admin-btn-action.warning {
+    background-color: #fef9c3;
+    color: #854d0e;
+}
 
 .admin-package-list {
     display: flex;
