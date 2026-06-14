@@ -208,8 +208,8 @@ body {
 
 .btn:focus,
 .btn:focus-visible {
-    outline: 2px solid var(--primary);
-    outline-offset: 2px;
+    outline: none !important;
+    box-shadow: none; /* In case any shadow acts as outline */
 }
 
 .btn-secondary {
@@ -760,4 +760,60 @@ body {
 /* Utility class for primary colored text */
 .text-primary {
     color: var(--primary) !important;
+}
+
+/* ==========================================================================
+   Floating WhatsApp Button
+   ========================================================================== */
+.wa-floating-btn {
+    position: fixed;
+    bottom: 35px;
+    right: 24px;
+    z-index: 1000;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    animation: wa-vibrate 1.5s infinite;
+}
+
+.wa-floating-btn:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+    color: white;
+    animation: none; /* Stop vibrating on hover */
+}
+
+@keyframes wa-vibrate {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(15deg); }
+    20% { transform: rotate(-15deg); }
+    30% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@media (max-width: 768px) {
+    .wa-floating-btn {
+        bottom: 25px;
+        right: 16px;
+        width: 55px;
+        height: 55px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wa-floating-btn {
+        bottom: 20px;
+        right: 12px;
+        width: 50px;
+        height: 50px;
+    }
 }
