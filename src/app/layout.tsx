@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import ClickSpark from "@/components/ClickSpark";
+import FloatingPromo from "@/components/FloatingPromo";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -60,7 +62,15 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className={outfit.className}>
-        {children}
+        <ClickSpark
+          sparkColor="#ea580c"
+          sparkSize={12}
+          sparkRadius={20}
+          sparkCount={8}
+          duration={600}
+        >
+          {children}
+        </ClickSpark>
       </body>
     </html>
   );

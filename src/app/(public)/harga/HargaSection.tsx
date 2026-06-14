@@ -68,7 +68,7 @@ export default function HargaSection() {
               <span className="pricing-start-from">Mulai dari</span>
               <span className="pricing-original-price">Rp 2,3 Juta</span>
               <div className="pricing-price">
-                <span className="pricing-amount">Rp 1,5 Juta</span>
+                <span className="pricing-amount">Rp 1,8 Juta</span>
               </div>
             </div>
             <p className="service-description" style={{ minHeight: "auto", marginBottom: "20px" }}>
